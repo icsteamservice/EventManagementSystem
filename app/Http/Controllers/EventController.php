@@ -89,6 +89,7 @@ class EventController extends Controller
      */
     public function show($id)
     {
+        
         $event = Event::with(['vendor', 'venue', 'category', 'artist'])->findOrFail($id);
         return view('event.show', compact('event'));
     }
